@@ -236,13 +236,13 @@
 //     }
 //     return percentage * bill;
 // }
-//
+
 // let bills = [124, 48, 268];
 // let tips = [tipCalculator(bills[0]),
 //               tipCalculator(bills[1]),
 //               tipCalculator(bills[2])];
 // console.log(tips);
-//
+
 // let totalBill = [tips[0] + bills[0],
 //                  tips[1] + bills[1],
 //                  tips[2] + bills[2]];
@@ -367,7 +367,7 @@
 //     console.log(john[i])
 // }
 
-// //****** challange loop backwards *****
+// //****** challenge loop backwards *****
 // for (let i = john.length -1; i >=0; i--) {
 //     console.log(john[i])
 // }
@@ -376,3 +376,218 @@
 // ********** Coding Challenge 5 **********
 
 
+// function tipCalculator(bill){
+//     let percentage;
+//     if (bill < 50){
+//         percentage = .2;
+//     }else if (bill >= 50 && bill <=200){
+//         percentage = .15
+//     }else{ 
+//         percentage = .1
+//     }
+//     return percentage * bill
+// }
+
+// let bills = [124, 48, 268, 180, 42]
+// for (var i = 0; i < bills.length; i++) {
+// }
+
+
+// let tips = []
+// let finalBill = []
+
+// ******** Coding Challenge 5 Attempt II **********
+
+// var john = {
+//     fullName: 'John Smith',
+//     bills: [124, 48, 268, 180, 42],
+//     calcTips: function() {
+//         this.tips = [];
+//         this.finalBill = [];
+
+//         for (var i = 0; i < this.bills.length; i++)
+//         {
+//             // Determine % based on tipping rules
+//             let percentage;
+//             let bill = this.bills[i];
+//             if (bill < 50) {
+//                 percentage = .2;
+//             } else if (bill >= 50 && bill < 200) {
+//                 percentage = .15
+//             } else {
+//                 percentage = .1
+//             }
+//             // Add result to corresponding arrays
+//             this.tips[i] = bill * percentage; 
+//             this.finalBill[i] = bill + bill * percentage
+//         }
+            
+//      }
+//   }
+
+// john.calcTips();
+// console.log(john)
+
+
+// ******** Coding Challenge 5 Attempt III **********
+
+
+var john = {
+    fullName: 'John Smith',
+    bills: [124, 48, 268, 180, 42],
+    calcTips: function() {
+        this.tips = [];
+        this.finalBill = [];
+
+        for( i = 0; i < this.bills.length; i++)
+
+        {
+            let percentage;
+            let bill = this.bills[i]
+
+            if (bill < 50){
+                percentage = .2;
+            }else if (bill >= 50 && bill < 200){
+                percentage = .15;
+            }else {
+                percentage = .1;
+            }
+
+            this.tips[i] = bill * percentage;
+            this.finalBill[i] = bill + bill * percentage;
+        }
+    }
+}
+
+john.calcTips();
+console.log(john)
+
+// ******** Coding Challenge 5 Attempt IV **********
+
+var john = {
+    fullName: 'John Smith',
+    bills: [ 124, 48, 268, 180, 42 ],
+    calcTips: function () {
+        this.tips = [];
+        this.totalBill = []; 
+
+        for (i = 0; i < this.bills.length; i++)
+
+        {
+            let percentage;
+            let bill = this.bills[i]
+
+            if(bill < 50){
+                percentage = .2;
+            }else if( bill >= 50 && bill < 200){
+                percentage = .15;
+            }else{
+                percentage = .1;
+            }
+
+            this.tips[i] = bill * percentage;
+            this.totalBill[i] = bill + bill * percentage;
+        }
+    }
+
+}
+
+john.calcTips();
+console.log(john)
+
+// ******** Coding Challenge 5 Attempt VI... perfecting the technique **********
+
+
+var john = {
+    fullName: 'John Smith',
+    bills: [124, 48, 268, 180, 42],
+    calcTip: function(){
+        this.tips= [];
+        this.totalBill = [];
+
+        for (i = 0; i < this.bills.length; i++)
+
+        {
+            let percentage;
+            let bill = this.bills[i];
+
+            if(bill < 50){
+                percentage = .2;
+            }else if(bill >= 50 && bill < 200){
+                percentage = .15;
+            }else{
+                percentage = .1;
+            }
+
+            this.tips[i] = bill * percentage;
+            this.totalBill[i] = bill + bill* percentage;
+        }
+    }
+}
+
+john.calcTip();
+console.log(john);
+
+// ******** Coding Challenge 5.2 **********
+
+
+
+var john = {
+    fullName: 'John Smith',
+    bills: [124, 48, 268, 180, 42],
+    calcTips: function () {
+        this.tips = [];
+        this.totalBill = [];
+
+        for (i = 0; i < this.bills.length; i++) {
+            let percentage;
+            let bill = this.bills[i]
+
+            if (bill < 50) {
+                percentage = .2;
+            } else if (bill >= 50 && bill < 200) {
+                percentage = .15;
+            } else {
+                percentage = .1;
+            }
+
+            this.tips[i] = bill * percentage;
+            this.totalBill[i] = bill + bill * percentage;
+        }
+    }
+
+}
+
+john.calcTips();
+console.log(john)
+
+// ******** Coding Challenge 5 Attempt VI... perfecting the technique **********
+
+
+var mark = {
+    fullName: 'Mark Smith',
+    bills: [77, 475, 110, 45],
+    calcTip: function () {
+        this.tips = [];
+        this.totalBill = [];
+
+        for (i = 0; i < this.bills.length; i++) {
+            let percentage;
+            let bill = this.bills[i];
+
+            if (bill < 100) {
+                percentage = .2;
+            } else if (bill >= 100 && bill < 300) {
+                percentage = .1;
+            } else {
+                percentage = .25;
+            }
+
+            this.tips[i] = bill * percentage;
+            this.totalBill[i] = bill + bill * percentage;
+        }
+    }
+}
+
+mark.calcTip();
+console.log(mark);
