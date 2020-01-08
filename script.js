@@ -530,40 +530,6 @@ console.log(john);
 
 // ******** Coding Challenge 5.2 **********
 
-
-
-var john = {
-    fullName: 'John Smith',
-    bills: [124, 48, 268, 180, 42],
-    calcTips: function () {
-        this.tips = [];
-        this.totalBill = [];
-
-        for (i = 0; i < this.bills.length; i++) {
-            let percentage;
-            let bill = this.bills[i]
-
-            if (bill < 50) {
-                percentage = .2;
-            } else if (bill >= 50 && bill < 200) {
-                percentage = .15;
-            } else {
-                percentage = .1;
-            }
-
-            this.tips[i] = bill * percentage;
-            this.totalBill[i] = bill + bill * percentage;
-        }
-    }
-
-}
-
-john.calcTips();
-console.log(john)
-
-// ******** Coding Challenge 5 Attempt VI... perfecting the technique **********
-
-
 var mark = {
     fullName: 'Mark Smith',
     bills: [77, 475, 110, 45],
@@ -589,5 +555,20 @@ var mark = {
     }
 }
 
+function calcAverageTips(tips){
+    var sum = 0;
+    for (i = 0; i < tips.length; i++) {
+        sum = sum + tips[i];
+    }
+    return sum / tips.length;
+}
+
+// do calculations
+
 mark.calcTip();
-console.log(mark);
+john.calcTip();
+
+john.average = calcAverageTips(john.tips);
+mark.average = calcAverageTips(mark.tips);
+console.log(mark, john)
+
